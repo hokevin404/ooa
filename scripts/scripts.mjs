@@ -16,3 +16,11 @@ const adventurer = {
         console.log(`${this.name} rolled a ${result}.`)
     }
 }
+
+class Character {
+    constructor (name) {
+      this.name = name;
+      this.health = 100;
+      this.inventory = [];
+    }
+  }
