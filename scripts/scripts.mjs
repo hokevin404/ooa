@@ -58,3 +58,16 @@ class Adventurer extends Character {
       super.roll();
     }
 }
+
+class Companion extends Character {
+    constructor (name, type) {
+        super(name);
+        this.type = type;
+        this.inventory.push("goggles", "scarf");
+    }
+}
+
+const robin = new Adventurer("robin", "archer");
+const hawk = new Companion("hawk", "scout");
+// console.log(robin);
+// console.log(hawk);
