@@ -29,6 +29,7 @@ class Character {
         const result = Math.floor(Math.random() * 20) + 1 + mod;
         console.log(`${this.name} rolled a ${result}.`)
     }
+    static MAX_HEALTH = 100;
 }
 
 // const robin = new Character("Robin");
@@ -52,10 +53,17 @@ class Adventurer extends Character {
       // Every adventurer starts with a bed and 50 gold coins.
       this.inventory.push("bedroll", "50 gold coins");
     }
+
     // Adventurers have the ability to scout ahead of them.
     scout () {
       console.log(`${this.name} is scouting ahead...`);
       super.roll();
+    }
+
+    static ROLES = ["Fighter", "Cleric", "Mage", "Archer", "Cavalier", "Thief", "Shaman"];
+
+    static roleCheck(role) {
+        return Adventurer.ROLES.includes(role);
     }
 }
 
@@ -71,3 +79,4 @@ const robin = new Adventurer("robin", "archer");
 const hawk = new Companion("hawk", "scout");
 // console.log(robin);
 // console.log(hawk);
+
